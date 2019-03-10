@@ -1,9 +1,9 @@
 # The name of the program to build
-PROGRAM=a.out
+PROGRAM=xwstatus
 
 # The list of object files that need to be built
 # the values her will be prefixed by the $(BUILD) folder
-OBJECTS := logging.o
+OBJECTS := status.o logging.o
 # The files with global configuration or macros
 # the values her will be prefixed by the $(INCLUDE) folder
 GLOBALS := layout.h
@@ -21,7 +21,7 @@ CFLAGS += -D_POSIX_C_SOURCE=200809L -D_ISOC11_SOURCE
 CFLAGS += -std=c11 -Wall -Wextra -Werror -pedantic -D_FORTIFY_SOURCE=2
 
 # Libraries required for this project
-LDFLAGS :=
+LDFLAGS := -lX11
 
 # Optional extra config for logging in a threaded program
 # you will need to implement get_current_thread_name() for thread-logging
