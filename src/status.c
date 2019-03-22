@@ -21,7 +21,7 @@ int main( void )
 
 	if ( display == NULL )
 	{
-		log( LOG_GENERAL, CRIT, "cannot open display" );
+		logs( LOG_GENERAL, CRIT, "cannot open display" );
 		return 1;
 	}
 
