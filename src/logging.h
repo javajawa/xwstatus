@@ -41,7 +41,7 @@
 // Require that a program name is defined.
 // This is done by default in the Makefile
 #ifndef PROGRAM_NAME
-	#error "No program name defined"
+#	error "No program name defined"
 #endif
 
 #include <errno.h>
@@ -81,16 +81,16 @@ void clean_exit();
 // When compiling with the DEBUG flag, we append the file and line number
 // to the program name for the log prefixes
 #ifdef DEBUG
-	#define _LOG_MARKER  PROGRAM_NAME ":" __FILE__ ":" STR(__LINE__)
+#	define _LOG_MARKER  PROGRAM_NAME ":" __FILE__ ":" STR(__LINE__)
 #else
-	#define _LOG_MARKER  PROGRAM_NAME
+#	define _LOG_MARKER  PROGRAM_NAME
 #endif
 
 
 #ifdef THREADING
 	char const * get_thread_name();
 
-	#define logfs( log, level, format, ... ) \
+#	define logfs( log, level, format, ... ) \
 		_Static_assert( level > NONE && level < LOG_MAX, "Log Level not valid at " __FILE__ ":" STR(__LINE__) ); \
 		if ( level <= log ) { \
 			fprintf( \
@@ -104,7 +104,7 @@ void clean_exit();
 
 #else
 
-	#define logfs( log, level, format, ... ) \
+#	define logfs( log, level, format, ... ) \
 		_Static_assert( level > NONE && level < LOG_MAX, "Log Level not valid" ); \
 		if ( level <= log ) { \
 			fprintf( \

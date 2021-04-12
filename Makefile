@@ -3,10 +3,10 @@ PROGRAM=xwstatus
 
 # The list of object files that need to be built
 # the values her will be prefixed by the $(BUILD) folder
-OBJECTS := status.o logging.o
+OBJECTS := status.o logging.o clock.o
 # The files with global configuration or macros
-# the values her will be prefixed by the $(INCLUDE) folder
-GLOBALS := layout.h
+# the values here will be prefixed by the $(INCLUDE) folder
+GLOBALS := logging.h config.h
 
 # The project's folder structure
 SRC     := src
